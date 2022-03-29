@@ -14,9 +14,6 @@
 
 html,
 body {
-	color: #fff;
-	background-color: $main-color;
-	padding: 1.5rem;
 	font-family: 'Inter', sans-serif;
 	line-height: 1.5;
 
@@ -43,5 +40,4 @@ h4,
 h5,
 h6 {
 	overflow-wrap: break-word;
-	hyphens: auto;
 }

@@ -55,3 +55,9 @@ $larger-font: 700;
 }
 
 $border-radius: 0.25rem;
+
+%reg-flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

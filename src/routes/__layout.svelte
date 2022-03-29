@@ -1,11 +1,8 @@
 <script>
 	import '../app.scss';
-	import Header from './lib/components/Header.svelte';
+	//import Header from './lib/components/Header.svelte';
 </script>
-
-<Header/>
 
 <main>
 	<slot />
 </main>
-
