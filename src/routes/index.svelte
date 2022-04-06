@@ -6,7 +6,14 @@
 	<section class="bots">
 		<div>
 			<div>
-				<h2>ANIMISTA</h2>
+				<h2>
+					<a
+						href="https://discord.com/api/oauth2/authorize?client_id=948338036276609054&permissions=277025704960&scope=applications.commands%20bot"
+						target="_blank"
+					>
+						ANIMISTA
+					</a>
+				</h2>
 			</div>
 			<div>
 				<h2>COMING SOON</h2>
@@ -37,12 +44,15 @@
 			justify-content: center;
 			flex-direction: column;
 			h1 {
+				line-height: 1.2;
+				color: var(--text-white);
 				@include break(tablet) {
 					@include font-props(h1);
 				}
 				@include font-props(h2);
 			}
 			p {
+				color: var(--text-grey);
 				margin-top: 1rem;
 				@include font-props(p);
 			}
@@ -61,7 +71,7 @@
 					height: 3.3rem;
 					margin: 1rem 0;
 					border-radius: $border-radius;
-					background-color: $main-color;
+					background-color: var(--secondary-bg-color);
 					transition: all 0.5s ease-in-out;
 					&:hover {
 						width: calc(14rem + 1rem);
@@ -70,7 +80,14 @@
 					}
 
 					h2 {
-						color: #fff;
+						color: var(--text-white);
+						a {
+							color: var(--text-white);
+							text-decoration: none;
+							&:visited {
+								color: var(--text-white);
+							}
+						}
 					}
 				}
 			}

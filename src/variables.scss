@@ -24,9 +24,6 @@
 	grid-template-rows: repeat($amount, minmax(0, 1fr));
 }
 
-$main-color: #000;
-$accent-color: #fff;
-
 $small-font: 400;
 $medium-font: 500;
 $large-font: 600;
@@ -34,7 +31,7 @@ $larger-font: 700;
 
 @mixin font-props($element) {
 	@if $element==p {
-		font-size: 1rem;
+		font-size: 1.12rem;
 		font-weight: $small-font;
 	}
 	@if $element==btn {
