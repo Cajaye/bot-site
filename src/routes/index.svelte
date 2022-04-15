@@ -84,9 +84,9 @@
 		background-color: var(--main-bg-color);
 		padding: 0 2.5rem;
 		@include break(tablet) {
-			margin-top: 0;
+			padding-top: 0;
 		}
-		margin-top: 2rem;
+		padding-top: 2rem;
 		display: grid;
 		place-content: center;
 		@include break(tablet) {
