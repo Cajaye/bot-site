@@ -1,12 +1,18 @@
 <script lang="ts">
 	let state = false;
 	import { fade } from 'svelte/transition';
+	let mainColor = 'hsl(250, 24%, 9%)';
+	let textColor = 'hsl(0, 0%, 100%)';
+	$: state
+		? ((mainColor = '#fff'), (textColor = '#000'))
+		: ((mainColor = 'hsl(250, 24%,9%)'), (textColor = 'hsl(0, 0%, 100%)'));
 </script>
 
-<main>
+<main style="--main-bg-color:{mainColor};--text-white:{textColor}">
 	<section class="intro">
 		{#if state}
 			<svg
+				style="color: #000;"
 				on:click={() => (state = !state)}
 				in:fade
 				xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +81,8 @@
 		margin-bottom: 0.8rem;
 	}
 	main {
-		margin: 0 2.5rem;
+		background-color: var(--main-bg-color);
+		padding: 0 2.5rem;
 		@include break(tablet) {
 			margin-top: 0;
 		}
@@ -138,13 +145,13 @@
 					}
 
 					h2 {
-						color: var(--text-white);
+						color: hsl(0, 0%, 100%);
 
 						a {
-							color: var(--text-white);
+							color: hsl(0, 0%, 100%);
 							text-decoration: none;
 							&:visited {
-								color: var(--text-white);
+								color: hsl(0, 0%, 100%);
 							}
 						}
 					}
