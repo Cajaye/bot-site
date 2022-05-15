@@ -8,7 +8,7 @@
 		: ((mainColor = 'hsl(250, 24%,9%)'), (textColor = 'hsl(0, 0%, 100%)'));
 </script>
 
-<main style="--main-bg-color:{mainColor};--text-white:{textColor}">
+<main style="--main-bg-color:{mainColor};--text-white:{textColor};">
 	<section class="intro">
 		{#if state}
 			<svg
@@ -73,6 +73,14 @@
 </main>
 
 <style lang="scss">
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 	svg {
 		cursor: pointer;
 		color: #fff;
@@ -81,6 +89,7 @@
 		margin-bottom: 0.8rem;
 	}
 	main {
+		min-height: 100vh;
 		background-color: var(--main-bg-color);
 		padding: 0 2.5rem;
 		@include break(tablet) {
@@ -90,7 +99,6 @@
 		display: grid;
 		place-content: center;
 		@include break(tablet) {
-			height: 100vh;
 			@include grid-column-layouts(2);
 		}
 
@@ -132,16 +140,38 @@
 				gap: 1.8rem;
 				div {
 					display: inline-flex;
-					width: 15rem;
+					@include break(tablet) {
+						width: 15rem;
+					}
+					text-align: center;
+					width: 12rem;
 					padding: 0.8rem 0;
 					border: 1px solid var(--border-color);
 					border-radius: $border-radius;
 					background-color: var(--secondary-bg-color);
 					transition: all 0.23s ease-in-out;
-					&:hover {
-						width: calc(15rem + 1rem);
-						padding: calc(1rem + 2px) 0;
-						cursor: pointer;
+
+					@include break(tablet) {
+						&:hover {
+							width: calc(15rem + 1rem);
+							padding: calc(1rem + 2px) 0;
+							cursor: pointer;
+
+							&:first-child::before {
+								text-align: left;
+								padding: 1rem;
+								animation: fadeIn 800ms ease-in-out;
+								content: 'Animista bot has 3 commands /quote, /animista which sends an embeded message with a random anime quote and /anifact which sends a random anime fact(will be removed soon).';
+								bottom: 30px;
+								display: block;
+								position: absolute;
+								color: var(--text-grey);
+								background-color: var(--secondary-bg-color);
+								width: 12rem;
+								border: 1px solid var(--border-color);
+								border-radius: $border-radius;
+							}
+						}
 					}
 
 					h2 {
